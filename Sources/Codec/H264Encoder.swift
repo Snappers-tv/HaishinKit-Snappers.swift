@@ -245,7 +245,7 @@ public final class H264Encoder {
     }
 
     func encodeImageBuffer(_ imageBuffer: CVImageBuffer, presentationTimeStamp: CMTime, duration: CMTime) {
-        guard isRunning.value && locked == 0 else {
+        guard isRunning.value else {
             return
         }
         if invalidateSession {
