@@ -53,7 +53,7 @@ public class AudioConverter {
     }
     private static let numSamples: Int = 1024
 
-    var muted: Bool = false
+    var muted = false
     var bitrate: UInt32 = AudioConverter.defaultBitrate {
         didSet {
             guard bitrate != oldValue else {
@@ -131,7 +131,7 @@ public class AudioConverter {
     }
     private var audioStreamPacketDescriptionPointer: UnsafeMutablePointer<AudioStreamPacketDescription>?
 
-    private let inputDataProc: AudioConverterComplexInputDataProc = {(converter: AudioConverterRef, ioNumberDataPackets: UnsafeMutablePointer<UInt32>, ioData: UnsafeMutablePointer<AudioBufferList>, outDataPacketDescription: UnsafeMutablePointer<UnsafeMutablePointer<AudioStreamPacketDescription>?>?, inUserData: UnsafeMutableRawPointer?) in
+    private let inputDataProc: AudioConverterComplexInputDataProc = {(_: AudioConverterRef, ioNumberDataPackets: UnsafeMutablePointer<UInt32>, ioData: UnsafeMutablePointer<AudioBufferList>, outDataPacketDescription: UnsafeMutablePointer<UnsafeMutablePointer<AudioStreamPacketDescription>?>?, inUserData: UnsafeMutableRawPointer?) in
         Unmanaged<AudioConverter>.fromOpaque(inUserData!).takeUnretainedValue().onInputDataForAudioConverter(
             ioNumberDataPackets,
             ioData: ioData,
