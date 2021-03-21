@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = "New BSD"
   s.author       = { "shogo4405" => "shogo4405@gmail.com" }
   s.authors      = { "shogo4405" => "shogo4405@gmail.com" }
-  s.source       = { :git => "https://github.com/Snappers-tv/HaishinKit.swift", :branch => "master" }
+  s.source       = { :git => "https://github.com/Snappers-tv/HaishinKit-Snappers.swift", :branch => "master" }
   s.social_media_url = "http://twitter.com/shogo4405"
 
   s.ios.deployment_target = "9.0"
